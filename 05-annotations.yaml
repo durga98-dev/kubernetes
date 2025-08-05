@@ -1,0 +1,11 @@
+kind: pod
+apiVersion: v1
+metadata:
+  name: annotations
+  annotations:
+    buildURL: 
+    imageregistry: 
+spec:
+  containers:
+  - name: nginx
+    image: nginx
