@@ -4,11 +4,10 @@ metadata:
   name: nginx
 spec:
   selector: #Lables are used as selectors
-    lables:
-      project: expense
-      component : backend
-      environment: dev
-      version: "1.0.0"
+    project: expense
+    component : backend
+    environment: dev
+    version: "1.0.0"
   ports:
     - protocol: TCP
       port: 80 #service port
