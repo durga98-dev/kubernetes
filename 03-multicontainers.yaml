@@ -2,7 +2,7 @@ kind: Pod
 apiVersion: v1
 metadata:
   name: multi-containers
-  namespace: expense
+  #namespace: expense
 spec:
   containers:
   - name: nginx
