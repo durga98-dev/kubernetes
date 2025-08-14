@@ -18,7 +18,7 @@ kind: Pod
 apiVersion: v1
 metadata:
   name: backend
-  lables:
+  labels:
       project: expense
       component : backend
       environment: dev
