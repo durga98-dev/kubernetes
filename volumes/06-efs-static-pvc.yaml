@@ -14,9 +14,9 @@ spec:
 apiVersion: v1
 kind: Pod
 metadata:
-  name: ebs-static
+  name: efs-static
   labels:
-    purpose: ebs-static-demo
+    purpose: efs-static-demo
 spec:
   containers:
   - name: nginx
@@ -27,7 +27,7 @@ spec:
   volumes:
   - name: persistent-storage
     persistentVolumeClaim:
-      claimName: ebs-static-claim # should be pvc name
+      claimName: efs-static-claim # should be pvc name
 
 ---
 kind: Service
@@ -37,7 +37,7 @@ metadata:
 spec:
   type: LoadBalancer
   selector: #Lables are used as selectors
-    purpose: ebs-static-demo
+    purpose: efs-static-demo
   ports:
     - protocol: TCP
       port: 80 #service port
