@@ -26,4 +26,4 @@ spec:
   volumes:
   - name: persistent-storage
     persistentVolumeClaim:
-      claimName: ebs-static-pv # should be volumename
+      claimName: ebs-static-claim # should be volumename
