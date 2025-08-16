@@ -22,6 +22,12 @@ spec:
   containers:
   - name: nginx
     image: nginx
+    labels:
+      project: expense
+      component : backend
+      environment: dev
+      version: "1.0.0"
+      demo: lb
     volumeMounts:
     - name: persistent-storage
       mountPath: /usr/share/nginx/html
@@ -29,3 +35,22 @@ spec:
   - name: persistent-storage
     persistentVolumeClaim:
       claimName: ebs-static-claim # should be pvc name
+
+---
+kind: Service
+apiVersion: v1
+metadata:
+  name: nginx-lb
+spec:
+  type: LoadBalancer
+  selector: #Lables are used as selectors
+    project: expense
+    component : backend
+    environment: dev
+    version: "1.0.0"
+    demo: lb
+  ports:
+    - protocol: TCP
+      port: 80 #service port
+      targetPort: 80
+      nodePort: 30007
