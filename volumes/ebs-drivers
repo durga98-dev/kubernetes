@@ -1,0 +1,10 @@
+
+ebs drivers
+kubectl apply -k "github.com/kubernetes-sigs/aws-ebs-csi-driver/deploy/kubernetes/overlays/stable/?ref=release-1.24"
+
+efs drivers
+
+kubectl apply -k \
+    "github.com/kubernetes-sigs/aws-efs-csi-driver/deploy/kubernetes/overlays/stable/?ref=release-2.1"
+
+ kubectl get pods -n kube-system - to check whether successfully installed or not
